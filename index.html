@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Assignment</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <header class="main-head">
+      <nav>
+        <h1 id="logo">Welcome</a></h1>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#login" onclick="openNav()">	
+              Login &#9660;</a></li>
+        </ul>
+       </nav>
+     </header>
+
+    <div id="side-menu" class="sideMenu">
+      
+      <div class="login">
+        <i class="fa fa-sign-in" aria-hidden="true"> Login</i>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      </div>
+        
+    
+
+       <div class="mobile">
+         <input type="text" placeholder="Enter Your Mobile Number"/>
+
+       </div>
+       <div class="signup">
+         <p class="sign">New To Website? <span class="color">SignUp</span></p>
+         <button class="btn" type="submit" value="submit" onclick="saySomething()">Button Click</button>
+       </div>
+    </div>
+      
+
+    
+      <section class="hero" id="hero">
+        <div class="hero-image">
+
+        </div>
+
+        <div class="scroll" id="scroll">
+            
+            <div class="range-slider">
+                <label for="range">0</label>
+                <input type="range" id="range" min="0" max="100" value="0" class="slider">
+            </div>
+           
+
+        </div>
+       </section>
+   
+    <script>
+      function openNav() {
+        document.getElementById("side-menu").style.width = "400px";
+        document.getElementById("hero").style.marginRight = "400px";
+      }
+
+      function closeNav() {
+        document.getElementById("side-menu").style.width = "0";
+        document.getElementById("hero").style.marginRight = "0";
+      }
+      const range = document.getElementById("range");
+range.addEventListener("input", (e) => {
+  const value = +e.target.value;
+  const label = e.target.previousElementSibling;
+  label.innerHTML = value;
+  console.log(value);
+});
+range.addEventListener("mousemove", () => {
+  var x = range.value;
+  var color =
+    "linear-gradient(90deg,rgb(255,127,80)" +
+    x +
+    "%,rgb(214,214,214)" +
+    x +
+    "%)";
+  range.style.background = color;
+});
+function saySomething() {
+  alert("Hello Sunday Grids");
+}
+    </script>
+  </body>
+</html>
